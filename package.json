@@ -1,0 +1,27 @@
+{
+  "name": "tracer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --build",
+    "master-sever": "cross-env EXPORTER=jaeger ts-node server.ts",
+    "server:rpc:1": "cross-env EXPORTER=jaeger ts-node server-rpc-1.ts",
+    "server:rpc:2": "cross-env EXPORTER=jaeger ts-node server-rpc-2.ts",
+    "client": "cross-env EXPORTER=jaeger ts-node client.ts"
+  },
+  "keywords": [],
+  "author": "vincent_wsc <vincent_wsc@163.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.8",
+    "typescript": "^4.5.4",
+    "@opentelemetry/api": "^1.0.4",
+    "@opentelemetry/auto-instrumentations-node": "^0.27.1",
+    "@opentelemetry/exporter-jaeger": "^1.0.1",
+    "@opentelemetry/exporter-zipkin": "^1.0.1",
+    "@opentelemetry/sdk-node": "^0.27.0",
+    "@opentelemetry/shim-opentracing": "^1.0.1"
+  }
+}
